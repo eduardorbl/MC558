@@ -111,6 +111,9 @@ class Grafo:
             v1_aux.definir_status(0)
             v2_aux.definir_status(0)
             set_gifts = set()
+            set_vertices = set()
+            set_vertices.add(v1_aux)
+            set_vertices.add(v2_aux)
             set_gifts.add(v1_aux.get_presente())
             set_gifts.add(v2_aux.get_presente())
             finish = False
@@ -122,6 +125,7 @@ class Grafo:
                         v1_aux = v1_aux.get_ancestral()
                         v1_aux.definir_status(0)
                         set_gifts.add(v1_aux.get_presente())
+                        set_vertices.add(v1_aux)
                 elif (v1_aux.get_dist() < v2_aux.get_dist()):
                     if (v2_aux.get_ancestral().get_status() == 0):
                         finish = True
@@ -129,7 +133,8 @@ class Grafo:
                         v2_aux = v2_aux.get_ancestral()
                         v2_aux.definir_status(0)
                         set_gifts.add(v2_aux.get_presente())
-        for v in self.vertices.values():
+                        set_vertices.add(v2_aux)
+        for v in set_vertices:
             v.definir_status(1)
 
         return len(set_gifts)
