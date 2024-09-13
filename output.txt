@@ -1,0 +1,10 @@
+Time for Input n, m: 0.0
+Time for Input presentes: 0.0
+Time for Create Grafo: 0.0
+Time for Add vertices: 0.0
+Time for Read edges: 0.0
+4
+4
+1
+3
+Time for Answer questions: 8.535452127456665
