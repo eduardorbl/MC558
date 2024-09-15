@@ -1,4 +1,3 @@
-import timeit
 from collections import deque
 
 class Vertice:
@@ -140,21 +139,10 @@ def __main__():
     presentes = input().split()
 
     g = Grafo()
-    
-    start_time = timeit.default_timer()
+
     g.vertices_presentes(presentes)
-    elapsed = timeit.default_timer() - start_time
-    print(f"Tempo para vertices_presentes: {elapsed:.6f} segundos")
-    
-    start_time = timeit.default_timer()
     g.ler_arestas(n - 1)
-    elapsed = timeit.default_timer() - start_time
-    print(f"Tempo para ler_arestas: {elapsed:.6f} segundos")
-    
-    start_time = timeit.default_timer()
     g.ler_perguntas(m)
-    elapsed = timeit.default_timer() - start_time
-    print(f"Tempo para ler_perguntas: {elapsed:.6f} segundos")
 
 if __name__ == "__main__":
     __main__()
